@@ -15,9 +15,9 @@ load_dotenv()
 
 # Grab the API token from the .env file.
 DISCORD_TOKEN = os.getenv("DISCORD_TOKEN")
-
+intents = discord.Intents.default()
 # Creates a new Bot object with a specified prefix. It can be whatever you want it to be.
-bot = commands.Bot(command_prefix="$")
+bot = commands.Bot(command_prefix="$",  intents=intents)
 
 # on_message() event listener. Notice it is using @bot.event as opposed to @bot.command().
 @bot.event
